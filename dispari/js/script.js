@@ -1,13 +1,6 @@
-/*
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-Sommiamo i due numeri
-Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-Dichiariamo chi ha vinto.
-*/
-
+// ask user to guess if the sum will be even or odd
 let userGuess;
-
+// keep doing until their answer is either even or odd
 do {
   userGuess = prompt(
     "Guess if the sum of the two numbers will be even or odd: "
@@ -15,22 +8,29 @@ do {
 } while (userGuess !== "even" && userGuess !== "odd");
 console.log(userGuess);
 
+// ask user to choose a nr in range 1 to 5
 let userNr;
-
+// keep doing until their answer is a nr in that range
 do {
   userNr = parseInt(prompt("Choose a number in range 1 to 5:"));
 } while (userNr > 5 || userNr < 1 || userNr === NaN);
 console.log(userNr);
 
+// generate rnd for the cpu
 const cpuRndNr = getRndNr(1, 5);
 console.log(cpuRndNr);
 
+// sum user nr and the one rnd nr generate for the cpu
 const sum = userNr + cpuRndNr;
 console.log(sum);
 
+//check if the sum is even
 console.log(isEven(sum));
 
+// display the result
 if (isEven(sum) === true && userGuess === "even") {
+  console.log("user won");
+} else if (isEven(sum) === false && userGuess === "odd") {
   console.log("user won");
 } else {
   console.log("cpu won");
