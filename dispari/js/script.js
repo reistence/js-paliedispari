@@ -13,7 +13,7 @@ let userNr;
 // keep doing until their answer is a nr in that range
 do {
   userNr = parseInt(prompt("Choose a number in range 1 to 5:"));
-} while (userNr > 5 || userNr < 1 || userNr === NaN);
+} while (userNr > 5 || userNr < 1 || isNaN(userNr) === true);
 console.log(userNr);
 
 // generate rnd for the cpu
