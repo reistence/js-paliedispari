@@ -11,8 +11,8 @@ let userGuess;
 do {
   userGuess = prompt(
     "Guess if the sum of the two numbers will be even or odd: "
-  );
-} while (userGuess !== "even" || userGuess !== "odd");
+  ); // f                                f
+} while (userGuess !== "even" && userGuess !== "odd");
 console.log(userGuess);
 
 let userNr;
