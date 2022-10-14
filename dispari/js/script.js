@@ -16,9 +16,17 @@ do {
 } while (userNr > 5 || userNr < 1 || isNaN(userNr) === true);
 console.log(userNr);
 
+// display userNr into the dom
+const userNumber = document.getElementById("user-number");
+userNumber.innerHTML = userNr;
+
 // generate rnd for the cpu
 const cpuRndNr = getRndNr(1, 5);
 console.log(cpuRndNr);
+
+// display cpuNr into the dom
+const cpuNumber = document.getElementById("cpu-number");
+cpuNumber.innerHTML = cpuRndNr;
 
 // sum user nr and the one rnd nr generate for the cpu
 const sum = userNr + cpuRndNr;
@@ -28,13 +36,18 @@ console.log(sum);
 console.log(isEven(sum));
 
 // display the result
+let message = "";
 if (isEven(sum) === true && userGuess === "even") {
-  console.log("user won");
+  message = "you won";
 } else if (isEven(sum) === false && userGuess === "odd") {
-  console.log("user won");
+  message = "you won";
 } else {
-  console.log("cpu won");
+  message = "cpu won";
 }
+
+// display result into the dom
+const result = document.getElementById("result");
+result.innerHTML = `The sum of the two numbers is ${sum} and you said ${userGuess} so ${message}`;
 
 /**
  * Description generate rnd number in range min max
